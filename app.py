@@ -145,9 +145,13 @@ user_data = user_data.reindex(
 # ============================================================
 
 if st.button("Predict Loan Eligibility"):
-    prediction = model.predict(user_data)
 
-    if prediction[0] == 1:
-        st.error(" High Risk: Likely to take Personal Loan")
+    prediction = model.predict(user_data)[0]
+    probability = model.predict_proba(user_data)[0][1]
+
+    st.write(f"Default Probability: {probability:.2%}")
+
+    if prediction == 1:
+        st.error("🔴 High Risk: Customer Likely to Default")
     else:
-        st.success(" Low Risk: Unlikely to take Personal Loan")
+        st.success("🟢 Low Risk: Customer Unlikely to Default")
