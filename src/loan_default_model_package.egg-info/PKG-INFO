@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: loan_default_model_package
+Version: 0.0.1
+Summary: Loan Default ML pipeline packaged with Random Forest
+Author: Sriramula Rakesh
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary
